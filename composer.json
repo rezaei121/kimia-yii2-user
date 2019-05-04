@@ -1,5 +1,5 @@
 {
-    "name": "dektrium/yii2-user",
+    "name": "rezaei121/kimia-yii2-user",
     "description": "Flexible user registration and authentication module for Yii2",
     "keywords": ["yii2", "yii2-user", "user management", "dektrium"],
     "type": "yii2-extension",
@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "dektrium\\user\\": ""
+            "rezaei121\\kimia-yii2-user\\": ""
         }
     },
     "extra": {
