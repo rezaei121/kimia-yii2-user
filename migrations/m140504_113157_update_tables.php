@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use dektrium\user\migrations\Migration;
+use rezaei121\user\migrations\Migration;
 
 /**
  * @author Dmitry Erofeev <dmeroff@gmail.com>
@@ -29,16 +29,10 @@ class m140504_113157_update_tables extends Migration
         $this->dropColumn('{{%user}}', 'logged_in_at');
         $this->renameColumn('{{%user}}', 'registered_from', 'registration_ip');
         $this->addColumn('{{%user}}', 'flags', $this->integer()->notNull()->defaultValue(0));
-
-        // account table
-        $this->renameColumn('{{%account}}', 'properties', 'data');
     }
 
     public function down()
     {
-        // account table
-        $this->renameColumn('{{%account}}', 'data', 'properties');
-
         // user table
         if ($this->dbType == 'sqlsrv') {
             // this is needed because we need to drop the default constraint first
